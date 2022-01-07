@@ -41,5 +41,17 @@ function switchItUp(number) {
 	}
 	return result;
 }
-
+// switchItUp = (n) =>
+// 	[
+// 		'Zero',
+// 		'One',
+// 		'Two',
+// 		'Three',
+// 		'Four',
+// 		'Five',
+// 		'Six',
+// 		'Seven',
+// 		'Eight',
+// 		'Nine',
+// 	][n];
 switchItUp(1);
