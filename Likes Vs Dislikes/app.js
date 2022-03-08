@@ -14,22 +14,41 @@
 // If the list is empty, return Nothing.
 
 function likeOrDislike(buttons) {
-	let prevIndx;
+	let likeCount = 0;
 	let res;
+	let counter = 0;
 	if (buttons.length == 0) {
 		res = 'Nothing';
 	}
 	buttons.filter((item, ind) => {
-		item = item.toString();
-		prevIndx = ind - 1;
-		// console.log(item, prevIndx);
-		if (buttons[buttons.length - 1] === buttons[prevIndx]) {
-			res = 'Nothing';
-		} else {
-			res = buttons[buttons.length - 1];
+		// prevIndx = ind - 1;
+
+		if (item === 'Like') {
+			likeCount++;
+			counter = 0;
+		}
+		if (item === 'Dislike') {
+			counter++;
+			likeCount = 0;
 		}
 	});
-	return res;
+	if (likeCount % 2 != 0 && likeCount != 0) {
+		res = 'Like';
+	} else if (counter % 2 != 0 && counter != 0) {
+		res = 'Dislike';
+	} else {
+		res = 'Nothing';
+	}
+	console.log(likeCount, counter, res);
+	// return res;
 }
 
-likeOrDislike(['Like', 'Dislike', 'Dislike']);
+likeOrDislike([
+	'Like',
+	'Like',
+	'Dislike',
+	'Dislike',
+	'Like',
+	'Dislike',
+	'Dislike',
+]);
