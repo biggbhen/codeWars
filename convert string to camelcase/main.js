@@ -26,14 +26,16 @@ let newArr = str.split('_')
 let camelStr = []
 for (let x = 1; x < newArr.length; x++) {
  let element = newArr[x];
- let firstLetter= element.charAt(0).toUpperCase() + element.slice(1, element.length);
+ console.log(element[0]);
+ let firstLetter= element[0].toUpperCase()
+  // + element.slice(1, element.length);
  
- camelStr.push(firstLetter)
+ // camelStr.push(firstLetter)
 }
-let finalStr = [newArr[0], ...camelStr]
+// let finalStr = [newArr[0], ...camelStr]
 
 
-return finalStr.join('')
+// return finalStr.join('')
 
 }
 
