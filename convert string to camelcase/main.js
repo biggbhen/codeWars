@@ -22,21 +22,18 @@
 
 
 function toCamelCase(str){
-let newArr = str.split('_')
-let camelStr = []
-for (let x = 1; x < newArr.length; x++) {
- let element = newArr[x];
- console.log(element[0]);
- let firstLetter= element[0].toUpperCase()
-  // + element.slice(1, element.length);
- 
- // camelStr.push(firstLetter)
-}
-// let finalStr = [newArr[0], ...camelStr]
-
-
-// return finalStr.join('')
+let newArr = str.split('')
+joinStr=[]
+for(let i = 0; i < newArr.length; i++){
+ let x = newArr[i]
+ if(x === '-' || x === '_'){
+   x = ''
+  }
+  joinStr.push(x)
+ }
+ console.log(joinStr.join(''));
+// console.log(newArr);
+// console.log(typeof(str));
 
 }
-
-console.log(toCamelCase("the_stealth_warrior"));
+toCamelCase("the_stealth_warrior"); 
