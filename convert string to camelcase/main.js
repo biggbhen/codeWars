@@ -19,4 +19,4 @@ capitalizer.push(toCap)
 joinArr.push(newArr[0], ...capitalizer);
 return joinArr.join('')
 }
-console.log(toCamelCase("the_stealth_warrior")); 
+toCamelCase("the_stealth_warrior"); 
