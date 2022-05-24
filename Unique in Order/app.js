@@ -16,13 +16,14 @@ var uniqueInOrder = function (iterable) {
   for (let i = 0; i < strArr.length; i++) {
     const element = strArr[i];
     const nextIndex = i + 1;
-    console.log(element);
+    // console.log(element);
     if (newOrder[newOrder.length - 1] != element) {
       newOrder.push(strArr[i]);
     }
   }
-  console.log(newOrder);
+  return newOrder;
+  // console.log(newOrder);
 };
-uniqueInOrder([1, 2, 2, 3, 3]);
-uniqueInOrder('AAAABBBCCDAABBB');
-uniqueInOrder('ABBCcAD');
+// uniqueInOrder([1, 2, 2, 3, 3]);
+// uniqueInOrder('AAAABBBCCDAABBB');
+// uniqueInOrder('ABBCcAD');
