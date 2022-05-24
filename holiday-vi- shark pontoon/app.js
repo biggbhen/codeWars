@@ -41,3 +41,4 @@ function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) {
 // console.log(shark(24, 0, 4, 8, true));
 // console.log(shark(14, 12, 4, 14, false));
 // console.log(shark(2, 15, 2, 19, true));
+console.log(shark(35, 40, 3, 6, true));
