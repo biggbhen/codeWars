@@ -20,8 +20,25 @@
 
 // If you make it, return "Alive!", if not, return "Shark Bait!".
 
-
 function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) {
+  let sharkTime;
+  const youTime = pontoonDistance / youSpeed;
+  if (dolphin) {
+    sharkTime = sharkDistance / (sharkSpeed * 2);
+  } else {
+    sharkTime = sharkDistance / sharkSpeed;
+  }
 
- 
+  if (youTime < sharkTime) {
+    return 'Alive!';
+  } else {
+    return 'Shark Bait!';
+  }
 }
+
+// console.log(shark(12, 50, 4, 8, true));
+// console.log(shark(7, 55, 4, 16, true));
+// console.log(shark(24, 0, 4, 8, true));
+console.log(shark(14, 12, 4, 14, false));
+
+// 14 and 12 and 4 and 14 and false
