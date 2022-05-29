@@ -1,25 +1,17 @@
-class Person 
-  def initialize(f, l) 
-    @firstName = f
-    @lastName = l
-  end
-  def greet
-   @firstName + @lastName
+class Person
+  def initialize(name, surname)
+    @name, @surname = name, surname
   end
   
+  def greet
+    "Hello, #{@name} #{@surname}!"
   end
-const person = new Person('Bob', 'smith');
-
-
-
-   def getArea
-      @width * @height
-   end
 end
 
-# create an object
-person = Person.new('Bob', 'smith')
 
-# call instance methods
-a = person.greet()
-puts "Area of the box is : #{a}"
+# # create an object
+# person = Person.new('Bob', 'smith')
+
+# # call instance methods
+# a = person.greet()
+# puts "Hello #{a}"
