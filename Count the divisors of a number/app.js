@@ -17,4 +17,4 @@ function getDivisorsCnt(n) {
   }
   return numOfDivs;
 }
-console.log(getDivisorsCnt(6));
+console.log(getDivisorsCnt(4));
