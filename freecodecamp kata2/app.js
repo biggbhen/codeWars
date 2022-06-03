@@ -38,9 +38,23 @@ const contacts = [
   },
 ];
 
-function lookUpProfile(name, prop) {
-  // Only change code below this line
-  // Only change code above this line
-}
+// console.log(contacts[0].firstName);
 
-lookUpProfile('Akira', 'likes');
+function lookUpProfile(name, prop) {
+  let result;
+  for (let i = 0; i < contacts.length; i++) {
+    const x = contacts[i];
+    if (name === x.firstName && x.hasOwnProperty(prop) === true) {
+      return (result = x[prop]);
+    } else if (name !== x.firstName) {
+      console.log(name, x.firstName);
+      return (result = 'No such contact');
+    } else if (x.hasOwnProperty(prop) === false) {
+      return (result = 'No such property');
+    }
+  }
+
+  return result;
+}
+console.log(lookUpProfile('Akira', 'likes'));
+// lookUpProfile('Akira', 'likes')
