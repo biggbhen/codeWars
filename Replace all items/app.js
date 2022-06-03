@@ -16,6 +16,7 @@
 // }
 
 function replaceAll(seq, find, rep) {
+  console.log(seq.split('').join(''));
   if (typeof seq === 'string') {
     return seq
       .split('')
