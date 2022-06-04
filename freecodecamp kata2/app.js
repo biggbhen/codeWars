@@ -42,19 +42,27 @@ const contacts = [
 
 function lookUpProfile(name, prop) {
   let result;
+  let hasNoName = true;
+  let hasNoProp = true;
   for (let i = 0; i < contacts.length; i++) {
     const x = contacts[i];
-    if (name === x.firstName && x.hasOwnProperty(prop) === true) {
-      return (result = x[prop]);
-    } else if (name !== x.firstName) {
-      console.log(name, x.firstName);
-      return (result = 'No such contact');
-    } else if (x.hasOwnProperty(prop) === false) {
-      return (result = 'No such property');
+    if (x.firstName === name) {
+      hasNoName = false;
+      if (x.hasOwnProperty(prop)) {
+        hasNoProp = false;
+        result = x[prop];
+      }
     }
+  }
+  if (hasNoName) {
+    result = 'No such contact';
+  } else if (hasNoProp) {
+    result = 'No such property';
   }
 
   return result;
 }
-console.log(lookUpProfile('Akira', 'likes'));
+console.log(lookUpProfile('Bob', 'potato'));
+// lookUpProfile('Kristian', 'lastName')
 // lookUpProfile('Akira', 'likes')
+// lookUpProfile('Bob', 'potato');
