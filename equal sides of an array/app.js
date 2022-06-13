@@ -28,27 +28,28 @@ Note:
 If you are given an array with multiple answers, return the lowest correct index.*/
 
 function findEvenIndex(arr) {
-  let backCount = 0;
-  let frontCount = 0;
   let N = -1;
-  for (let i = 0; i < Math.floor(arr.length / 2); i++) {
-    backCount += arr[arr.length - 1 - i];
-    frontCount += arr[i];
-
-    if (backCount === frontCount) {
-      N = i + 1;
-    }
-
-    console.log(backCount, frontCount);
-    // if (backCount + frontCount === 0) {
-    //   console.log('object');
-    //   N = 0;
-    // }
-    //
+  let constPairs = [];
+  if (arr.length == 1) return 0;
+  let firstIndx = [
+    0,
+    arr.filter((item, ind) => ind != 0).reduce((a, b) => a + b),
+  ];
+  constPairs.push(firstIndx);
+  for (let i = 1; i < arr.length - 1; i++) {
+    let leftSide = arr.filter((item, ind) => ind < i).reduce((a, b) => a + b);
+    let rightSide = arr.filter((item, ind) => ind > i).reduce((a, b) => a + b);
+    constPairs.push([leftSide, rightSide]);
   }
-  return N;
+  let lastIndx = [
+    arr.filter((item, ind) => ind < arr.length - 1).reduce((a, b) => a + b),
+    0,
+  ];
+  constPairs.push(lastIndx);
+  const newPairs = constPairs.filter((x) => x[0] === x[1]);
+  return constPairs.indexOf(newPairs[0]);
 }
-console.log(findEvenIndex([20, 10, -80, 10, 10, 15, 35]));
+// console.log(findEvenIndex([20, 10, -80, 10, 10, 15, 35]));
 
 // [20,10,-80,10,10,15,35]
 // console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]));
