@@ -2,14 +2,26 @@
 
 // Examples (Input -> Output)
 // 7  -> 3 (because odd numbers below 7 are [1, 3, 5])
+// function oddCount(n) {
+//   // your code here
+//   let newArr = [];
+//   for (let i = 1; i < n; i++) {
+//     if (i % 2 !== 0) {
+//       newArr.push(i);
+//     }
+//   }
+//   return newArr.length;
+// }
+// console.log(oddCount(7));
+
 function oddCount(n) {
   // your code here
-  let newArr = [];
+  let count = 0;
   for (let i = 1; i < n; i++) {
     if (i % 2 !== 0) {
-      newArr.push(i);
+      count++;
     }
   }
-  return newArr.length;
+  return count;
 }
-console.log(oddCount(7));
+console.log(oddCount(15));
