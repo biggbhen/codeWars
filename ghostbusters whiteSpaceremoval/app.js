@@ -14,13 +14,25 @@
 
 // "You just wanted my autograph didn't you?"
 
+// function ghostBusters(building) {
+//   let arr = building.split('');
+//   let ans;
+//   if (arr.length > 1) {
+//     let ans = arr.filter((item) => item != ' ');
+//     return ans.join('');
+//   }
+//   return (ans = []);
+// }
+
 function ghostBusters(building) {
-  let arr = building.split('');
-  let ans;
-  if (arr.length > 1) {
-    let ans = arr.filter((item) => item != ' ');
-    return ans.join('');
-  }
-  return (ans = []);
+  let arr = building.split(' ');
+
+  // if (arr.length > 1) {
+  //   return arr.join('')
+  // }
+  // return "You just wanted my autograph didn't you?";
+  return arr.length > 1
+    ? arr.join('')
+    : "You just wanted my autograph didn't you?";
 }
 console.log(ghostBusters('Factor y'));
