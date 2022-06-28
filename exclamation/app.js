@@ -14,6 +14,6 @@ function remove(string) {
   if (strArr[strArr.length - 1] == '!') {
     strArr.pop();
   }
-  return strArr;
+  return strArr.join('');
 }
-remove('Hi!!!');
+console.log(remove('Hi'));
