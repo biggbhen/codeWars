@@ -10,7 +10,7 @@
 
 function longest(s1, s2) {
   let newArr = [...s1, ...s2];
-  return (unique = [...new Set(newArr)].sort());
+  return (unique = [...new Set(newArr)].sort().join(''));
 }
 
 longest('aretheyhere', 'yestheyarehere');
