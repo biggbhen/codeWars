@@ -57,12 +57,7 @@ After placing signs and brackets, the Maximum value obtained from the expression
 expressionsMatter(1,1,1)  ==>  return 3 */
 
 function expressionMatter(a, b, c) {
-  let firstOp = a * (b + c),
-    secondOp = a * b * c,
-    thirdOp = a + b * c,
-    fourthOp = (a + b) * c;
-  return Math.max(firstOp, secondOp, thirdOp, fourthOp);
-  // console.log(Math.max(firstOp, secondOp, thirdOp, fourthOp));
+  return Math.max(a + b + c, a * b * c, (a + b) * c, a * (b + c));
 }
-
-expressionMatter(2, 1, 2);
+console.log(expressionMatter(1, 10, 1));
+// expressionMatter(2, 1, 2);
