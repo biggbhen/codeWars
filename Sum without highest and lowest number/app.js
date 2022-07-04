@@ -9,14 +9,31 @@
 // { 6, 2, 1, 8, 10 } => 16
 // { 1, 1, 11, 2, 3 } => 6
 
+// function sumArray(array) {
+// 	if (array.length <= 2 || array == null) {
+// 		return 0;
+// 	} else {
+// 		let sortArr = array.sort();
+// 		sortArr.pop();
+// 		sortArr.shift();
+// 		return sortArr.reduce((a, b) => a + b, 0);
+// 	}
+// }
+// console.log(sumArray([6, 2, 1, 8, 10]));
+
 function sumArray(array) {
-	if (array.length <= 2 || array == null) {
+	if (array == null) {
+		return 0;
+	} else if (array.length < 2) {
 		return 0;
 	} else {
-		let sortArr = array.sort();
-		sortArr.pop();
-		sortArr.shift();
-		return sortArr.reduce((a, b) => a + b, 0);
+		array = array.sort(function (a, b) {
+			return a - b;
+		});
+		var total = 0;
+		for (var i = 1; i < array.length - 1; i++) {
+			total += array[i];
+		}
+		return total;
 	}
 }
-console.log(sumArray([6, 2, 1, 8, 10]));
