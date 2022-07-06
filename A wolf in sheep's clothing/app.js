@@ -19,7 +19,6 @@
 // console.log(arr);
 
 function warnTheSheep(arr) {
-	// console.log(arr);
 	let counter = 0,
 		kill;
 
@@ -35,8 +34,6 @@ function warnTheSheep(arr) {
 	} else {
 		return `Oi! Sheep number ${kill}! You are about to be eaten by a wolf!`;
 	}
-	// console.log(arr[kill], kill);
-	// console.log(arr[arr.length - 1]);
 }
 console.log(
 	warnTheSheep(['sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'wolf'])
