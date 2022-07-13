@@ -18,27 +18,34 @@
 // s
 // console.log(arr);
 
-function warnTheSheep(arr) {
-	let counter = 0,
-		kill;
+// function warnTheSheep(arr) {
+// 	let counter = 0,
+// 		kill;
 
-	for (let i = arr.length - 1; i >= 0; i--) {
-		const element = arr[i];
-		counter++;
-		if (element == 'wolf') {
-			kill = counter - 1;
-		}
-	}
-	if (arr[arr.length - 1] === 'wolf') {
-		return 'Pls go away and stop eating my sheep';
-	} else {
-		return `Oi! Sheep number ${kill}! You are about to be eaten by a wolf!`;
-	}
-}
-console.log(
-	warnTheSheep(['sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'wolf'])
-);
+// 	for (let i = arr.length - 1; i >= 0; i--) {
+// 		const element = arr[i];
+// 		counter++;
+// 		if (element == 'wolf') {
+// 			kill = counter - 1;
+// 		}
+// 	}
+// 	if (arr[arr.length - 1] === 'wolf') {
+// 		return 'Pls go away and stop eating my sheep';
+// 	} else {
+// 		return `Oi! Sheep number ${kill}! You are about to be eaten by a wolf!`;
+// 	}
+// }
+// console.log(
+// 	warnTheSheep(['sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'wolf'])
+// );
 
 // ['sheep', 'sheep', 'wolf']
 // 	['sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'wolf', 'sheep', 'sheep']
 // ['wolf'];
+
+function warnTheSheep(queue) {
+	const position = queue.reverse().indexOf('wolf');
+	return position === 0
+		? 'Pls go away and stop eating my sheep'
+		: `Oi! Sheep number ${position}! You are about to be eaten by a wolf!`;
+}
