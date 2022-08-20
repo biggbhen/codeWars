@@ -18,21 +18,20 @@
 // Attention: If the number has leading zeros the amount of digits should be considered.
 
 function incrementString(strng) {
-	let numberPattern = /\d+/g;
-	let numstr = [...strng.match(numberPattern).toString()];
-	let letters = strng.slice(0, -numstr.length);
-	let spliceIndx;
-	for (let i = 0; i < numstr.length; i++) {
-		let item = numstr[i],
-			nextIndex = i + 1;
-		if (p > 0) {
-			spliceIndx = i;
-		}
+	// return incrementedString
+	let string = strng.replace(/[0-9]/g, '');
+
+	let len = strng.length - string.length;
+
+	let str = strng.slice(string.length) || '0';
+
+	str = (parseInt(str) + 1).toString();
+
+	while (str.length < len) {
+		str = '0' + str;
 	}
-	let count = Number(numstr.splice(spliceIndx + 1));
-	count += 1;
-	numstr.push(count.toString());
-	console.log(numstr, count);
+
+	return string.concat(str);
 }
 
 incrementString('foobar0001');
