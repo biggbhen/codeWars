@@ -19,16 +19,17 @@
 
 function incrementString(strng) {
 	// return incrementedString
-	let string = strng.replace(/[0-9]/g, '');
+	let newStr = strng.replace(/[0-9]/g, '');
 
-	let len = strng.length - string.length;
+	let len = strng.length - newStr.length;
 
-	let str = strng.slice(string.length) || '0';
+	let str = strng.slice(newStr.length) || '0';
 
 	str = (parseInt(str) + 1).toString();
 
 	while (str.length < len) {
 		str = '0' + str;
+		// console.log(str);
 	}
 
 	return string.concat(str);
