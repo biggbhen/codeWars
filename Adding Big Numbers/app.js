@@ -16,7 +16,7 @@ function add(a, b) {
 		res = (c % 10) + res;
 		c = c > 9;
 	}
-	return res;
+	// console.log(res);
 }
 
 add('888', '222');
