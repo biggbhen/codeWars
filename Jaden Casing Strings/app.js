@@ -9,27 +9,13 @@
 // Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
 // Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
 
-// String.prototype.toJadenCase = function () {
-//   let capitalize;
-//   let splitArr = str.split(' ');
-//   console.log('omo');
-//   // splitArr.forEach((item) => {
-//   //   capitalize = item[0].toUpperCase();
-//   // });
-// };
+let str = "How can mirrors be real if our eyes aren't real";
 
-// console.log(str.toJadenCase());
 // str.toJadenCase()
-let jadenCase = function (str) {
-  let capitalize = [];
-  let splitArr = str.split(' ');
-  splitArr.forEach((item) => {
-    item[0].toUpperCase();
-    capitalize.push(item[0].toUpperCase() + item.slice(1));
-    // console.log(item[0].toUpperCase() + item.slice(1));
-  });
-  console.log(capitalize);
-  return capitalize;
+String.prototype.toJadenCase = function () {
+	return this.split(' ')
+		.map((word) => word[0].toUpperCase() + word.slice(1))
+		.join(' ');
 };
-jadenCase("How can mirrors be real if our eyes aren't real");
+str.jadenCase();
 // let str = ;
