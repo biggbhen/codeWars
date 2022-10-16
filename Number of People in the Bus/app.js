@@ -10,6 +10,8 @@
 
 // The second value in the first integer array is 0, since the bus is empty in the first bus stop.
 
+// const number = (busStops) => busStops.reduce((acc, [a, b]) => acc + a - b, 0);
+
 var number = function (busStops) {
 	let a = 0;
 	let b = 0;
